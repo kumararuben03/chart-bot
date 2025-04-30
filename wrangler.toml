@@ -1,4 +1,4 @@
-name = "chart-img-telegram-bot"
+name = "chart-bot"
 
 main = "src/index.js"
 compatibility_date = "2022-06-21"
