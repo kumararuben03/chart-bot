@@ -1,8 +1,8 @@
 {
   "debug": false,
   "authentication": {
-    "chartImgApiKey": "YOUR_CHART_API_KEY",
-    "telegramApiToken": "YOUR_TELEGRAM_API_TOKEN"
+    "chartImgApiKey": "G21ytnowiMw8dV3KxNlM2eBl65Nw3ov9geTEgcMa",
+    "telegramApiToken": "7875638062:AAFcP0H6URHQmLO9wWo3xdHEzvu7ob4YjCs"
   },
   "price": {
     "intervals": ["1d", "1M", "3M", "1Y", "5Y", "all"],

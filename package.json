@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "cf-chart-img-telegram-bot": "file:",
     "inquirer": "^9.0.0",
     "itty-router": "^2.6.1",
     "qs": "^6.11.0",
