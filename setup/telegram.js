@@ -1,7 +1,8 @@
 import axios from 'axios'
-import inquirer from 'inquirer'
-import config from '../config.json' assert { type: 'json' }
+import { default as inquirer } from 'inquirer'
+import { readFile } from 'fs/promises'
 
+const config = JSON.parse(await readFile(new URL('../config.json', import.meta.url), 'utf8'))
 const { authentication: AUTH, commands } = config
 
 console.log('\n')
@@ -17,7 +18,7 @@ inquirer
   .then((answer) => {
     return Promise.all([
       postTelegramAPI('setWebhook', {
-        url: `https://${answer.domain}/webhook/telegram`,
+        url: `${answer.domain}/webhook/telegram`,
       }),
       postTelegramAPI('setMyCommands', { commands: commands }),
     ])

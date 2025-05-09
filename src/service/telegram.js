@@ -78,6 +78,8 @@ function procCommand(chatId, text, isPrivate = false) {
 
   if (text === '/start') {
     return sendMessageStart(chatId)
+  } else if (text === '/help') {
+    return sendMessageHelp(chatId)
   } else if (text.startsWith('/example')) {
     return sendMessageExample(chatId)
   } else if (text === '/price') {
@@ -259,6 +261,24 @@ async function sendMessageExample(chatId) {
     chat_id: chatId,
     parse_mode: 'HTML',
     text: MESSAGE.example,
+  })
+
+  if (resSend.status !== 200) {
+    return sendMessageError(chatId, resSend.status, await resSend.json())
+  }
+}
+
+/**
+ * @param {Integer|String} chatId
+ * @returns {Promise}
+ */
+async function sendMessageHelp(chatId) {
+  debug && console.debug(`:: debug :: sendMessageHelp(${chatId})`)
+
+  const resSend = await sendMessage({
+    chat_id: chatId,
+    parse_mode: 'HTML',
+    text: MESSAGE.help,
   })
 
   if (resSend.status !== 200) {
